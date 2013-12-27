@@ -47,14 +47,6 @@ var left_foot = new THREE.Mesh(foot, cover);
 left_foot.position.set(75, -125, 0);
 avatar.add(left_foot);
 
-
-
-
-
-
-
-
-
 // Now, show what the camera sees on the screen
 var is_cartwheeling = false; //Set to false if you don't want him to cartwheel and set it to true if you do want him to do cartwheels.
 var is_flipping = false; //Set to false if you don't want him to flip and set it to true if you do want him to do flip.
