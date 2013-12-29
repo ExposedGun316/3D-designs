@@ -19,10 +19,13 @@
                         document.body.appendChild(renderer.domElement);
 
                         // ******** START CODING ON THE NEXT LINE ********
-                        var cover = new THREE.MeshNormalMaterial();
+                        var marker = new THREE.Object3D();
+						scene.add(marker);
+						
+						var cover = new THREE.MeshNormalMaterial();
                         var body = new THREE.SphereGeometry(100);
                         var avatar = new THREE.Mesh(body, cover);
-                        scene.add(avatar);
+                        marker.add(avatar);
 
                         var hand = new THREE.SphereGeometry(50);
 
@@ -44,7 +47,39 @@
                         left_foot.position.set(75, -125, 0);
                         avatar.add(left_foot);
 
-                        // Now, show what the camera sees on the screen
+                        marker.add(camera);
+						
+						makeTreeAt(500 , 0);
+						makeTreeAt(-500 , 0);
+						makeTreeAt(750 , -1000);
+						makeTreeAt(-750 , -1000);
+						
+						function makeTreeAt(x, z){
+						var trunk = new THREE.Mesh(
+						new THREE.CylinderGeometry(50, 50, 200),
+						new THREE.MeshBasicMaterial({color: 0xA0522D})
+						);
+						
+						var top = new THREE.Mesh(
+						new THREE.SphereGeometry(150),
+						new THREE.MeshBasicMaterial({color: 0x22B22})
+						);
+						top.position.y = 175;
+						trunk.add(top);
+						
+						trunk.position.set(x, -75, z);
+						scene.add(trunk);
+						}
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						// Now, show what the camera sees on the screen
                         var is_cartwheeling = false; //Set to false if you don't want him to cartwheel and set it to true if you do want him to do cartwheels.
                         var is_flipping = false; //Set to false if you don't want him to flip and set it to true if you do want him to do flip.
 
