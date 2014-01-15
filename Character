@@ -3,6 +3,7 @@
         <head>
                 <script src="http://gamingJS.com/Three.js"></script>
                 <script src="http://gamingJS.com/ChromeFixes.js"></script>
+                <title>3D avatar</title>
         </head>
 
         <body>
